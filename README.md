@@ -36,3 +36,4 @@ dungagi ni og katong mga facility staff, requester og administrator
 
 adminitrator: pacheco+test@gmail.com pass: tj2006
 requester: jb@gmail.com pass: jb12345
+facility staff: staff12345
