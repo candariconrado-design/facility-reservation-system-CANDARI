@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit Logs - Facility Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #333; color: white; }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 1000px;">
+    <h1>Audit Logs</h1>
+    <p>Welcome, <span id="userName"></span> (<span id="userRole"></span>)</p>
+
+    <div id="logsList">Loading...</div>
+
+    <br>
+    <a href="index.html">← Back to Dashboard</a> | 
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/audit.js"></script>
+</body>
+</html>

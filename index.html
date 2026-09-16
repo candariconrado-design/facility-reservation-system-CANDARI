@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Facility Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 25px;
+    }
+    .menu a, .menu button {
+      display: block;
+      padding: 14px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    .menu a:hover, .menu button:hover {
+      background: #45a049;
+    }
+    .role-badge {
+      display: inline-block;
+      background: #2196F3;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 500px;">
+    <h1>Facility Reservation System</h1>
+    <p>Welcome, <strong id="userName">User</strong></p>
+    <p>Role: <span id="userRole" class="role-badge">Loading...</span></p>
+
+    <div class="menu" id="menu">
+      <!-- Menus will be injected based on role -->
+    </div>
+
+    <br>
+    <button onclick="logout()" style="background:#f44336;">Logout</button>
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    async function loadDashboard() {
+      const { data: { user } } = await supabaseClient.auth.getUser();
+      if (!user) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      const { data: profile } = await supabaseClient
+        .from('profiles')
+        .select('full_name, role')
+        .eq('id', user.id)
+        .single();
+
+      if (!profile) return;
+
+      document.getElementById('userName').textContent = profile.full_name || user.email;
+      document.getElementById('userRole').textContent = profile.role;
+
+      const menu = document.getElementById('menu');
+      let html = '';
+
+      // Common
+      html += `<a href="facilities.html">View Facilities</a>`;
+      html += `<a href="reservations.html">Reservations</a>`;
+
+      // Role-based extra menus
+      if (profile.role === 'Administrator') {
+        html += `<a href="audit.html">Audit Logs</a>`;
+      }
+
+      if (profile.role === 'Facility Staff') {
+        // Staff mainly uses Reservations page
+      }
+
+      menu.innerHTML = html;
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>

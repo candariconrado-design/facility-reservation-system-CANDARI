@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+#message {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.btn { padding: 5px 10px; margin: 2px; cursor: pointer; border: none; border-radius: 4px; color: white; }
+.btn-approve { background: #4CAF50; }
+.btn-reject { background: #f44336; }
+.btn-cancel { background: #ff9800; }
+.status-Pending { color: orange; font-weight: bold; }
+.status-Approved, .status-Scheduled { color: green; font-weight: bold; }
+.status-Rejected, .status-Cancelled { color: red; font-weight: bold; }
+.status-In\ Use { color: blue; font-weight: bold; }
+.status-Completed { color: gray; font-weight: bold; }

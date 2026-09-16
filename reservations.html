@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations - Facility Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background-color: #4CAF50; color: white; }
+    .status-Pending { color: orange; font-weight: bold; }
+    .status-Approved, .status-Scheduled { color: green; font-weight: bold; }
+    .status-Rejected, .status-Cancelled { color: red; font-weight: bold; }
+    .status-In\ Use { color: blue; font-weight: bold; }
+    .status-Completed { color: gray; font-weight: bold; }
+    .btn { padding: 5px 10px; margin: 2px; cursor: pointer; border: none; border-radius: 4px; color: white; }
+    .btn-approve { background: #4CAF50; }
+    .btn-reject { background: #f44336; }
+    .btn-cancel { background: #ff9800; }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 1000px;">
+    <h1>Reservations</h1>
+    <p>Welcome, <span id="userName"></span> (<span id="userRole"></span>)</p>
+
+    <!-- Submit Reservation (for Requester) -->
+    <div id="requestSection" style="display: none; margin-bottom: 30px;">
+      <h2>Submit Reservation Request</h2>
+      <form id="reservationForm">
+        <div class="form-group">
+          <label>Facility</label>
+          <select id="facilitySelect" required></select>
+        </div>
+        <div class="form-group">
+          <label>Start Date & Time</label>
+          <input type="datetime-local" id="startTime" required>
+        </div>
+        <div class="form-group">
+          <label>End Date & Time</label>
+          <input type="datetime-local" id="endTime" required>
+        </div>
+        <div class="form-group">
+          <label>Purpose</label>
+          <input type="text" id="purpose" required>
+        </div>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+    <h2>Reservation List</h2>
+    <div id="reservationsList">Loading...</div>
+
+    <br>
+    <a href="index.html">← Back to Dashboard</a> | 
+    <a href="facilities.html">Facilities</a> | 
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/reservations.js"></script>
+</body>
+</html>
