@@ -28,5 +28,11 @@ Also supports: Cancelled
 ## Audit Trail
 All submissions, approvals, rejections, cancellations, and status changes are recorded in `audit_logs`.
 
-## Live Demo
+Live Demo
+
 https://candariconrado-design.github.io/facility-reservation-system-CANDARI/
+
+dungagi ni og katong mga facility staff, requester og administrator
+
+adminitrator: pacheco+test@gmail.com pass: tj2006
+requester: jb@gmail.com pass: jb12345
