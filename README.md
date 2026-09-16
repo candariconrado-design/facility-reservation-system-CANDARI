@@ -37,3 +37,13 @@ dungagi ni og katong mga facility staff, requester og administrator
 adminitrator: pacheco+test@gmail.com pass: tj2006
 requester: jb@gmail.com pass: jb12345
 facility staff: staff12345
+
+database password: EEEdTgyNFLMNgowu    
+Project URL:
+
+https://rzhekchxyvdjznurwydm.supabase.co
+
+Anon Key:
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6aGVrY2h4eXZkanpudXJ3eWRtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0OTQ0NTcsImV4cCI6MjEwNTA3MDQ1N30.caSpf48XzjSjXTa-cW1ArMQk3zDQNTp81xLo9r7F-UM
+
